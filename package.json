@@ -1,0 +1,28 @@
+{
+  "name": "AngularConf2015",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alessandro giorgetti",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.9.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-tslint": "^3.3.0-beta",
+    "typescript": "^1.6.2",
+    "path": "^0.12.7",
+    "gulp-inject": "^3.0.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "angular2": "^2.0.0-alpha.39",
+    "systemjs": "^0.19.3",
+    "bootstrap": "^3.3.5"
+  }
+}
