@@ -3,14 +3,16 @@
     <!-- <script src="../node_modules/traceur/bin/traceur-runtime.js"></script> -->
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
     <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="../node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="../node_modules/angular2/bundles/http.dev.js"></script>
   </head>
   <body>
-    <my-app>Loading...</my-app>
+    <todo-list>Loading...</todo-list>
     <script>
       System.config({
         packages: {'app': {defaultExtension: 'js'}}
       });
-      System.import('app/app');
+      System.import('app/bootstrap');
     </script>
   </body>
 </html>
