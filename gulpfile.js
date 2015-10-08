@@ -43,7 +43,7 @@ gulp.task("tslint", function () {
 
 // build with sourcemaps support
 
-gulp.task("build-ts", ["copy-templates", "copy-js", "compile-ts", "inject"]);
+gulp.task("build-ts", ["copy-templates", "copy-js", "compile-ts"]);
 
 gulp.task("compile-ts", function () {
   var tsResult = source

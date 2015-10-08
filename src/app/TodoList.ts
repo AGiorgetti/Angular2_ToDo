@@ -1,9 +1,12 @@
 import { ITodoItem } from "./TodoItem";
 import { TodoListService, ITodoListService } from "./TodoListService";
-import { Component, View, bind, Inject, NgFor } from "angular2/angular2";
+import { Component, View, bind, Inject, NgFor, FORM_DIRECTIVES } from "angular2/angular2";
+// maybe grabbing everything is better!
+import * as Angular2 from "angular2/angular2";
 
 @Component({
 	selector: "todo-list",
+	properties: ['todos']
 	/* interfaces do not work here?
 	bindings: [
 		bind(ITodoListService).toClass(TodoListService)
@@ -12,7 +15,7 @@ import { Component, View, bind, Inject, NgFor } from "angular2/angular2";
 })
 @View({
 	templateUrl: "app/todolist.html",
-	directives: [NgFor]
+	directives: [NgFor, FORM_DIRECTIVES]
 })
 export class TodoList {
 	
