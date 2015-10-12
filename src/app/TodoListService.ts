@@ -1,5 +1,5 @@
-import { Component, Injectable } from "angular2/angular2";
-import { Http, HTTP_BINDINGS, Headers } from 'angular2/http';
+import * as ng from "angular2/angular2";
+import * as ngHttp from 'angular2/http';
 import { ITodoItem } from "./TodoItem";
 
 export interface ITodoListService {
@@ -8,7 +8,7 @@ export interface ITodoListService {
 	removeTodo(id: number): void;
 }
 
-@Injectable()
+@ng.Injectable()
 export class TodoListService implements ITodoListService { // <- ES6 class
 		
 	// keeps the list of tasks 
@@ -16,7 +16,7 @@ export class TodoListService implements ITodoListService { // <- ES6 class
 
 	static $inject = ["$http"];
 	constructor(
-		private $http: Http
+		private $http: ngHttp.Http // Http
 	) {
 		$http.get("/api/list")
 			.map((res: any) => {
@@ -35,7 +35,7 @@ export class TodoListService implements ITodoListService { // <- ES6 class
 		 */
 	addTodo(task: string): void {
 		this.$http.post("/api/list", JSON.stringify({ "task": task }), {
-			headers: new Headers({ "content-type": "application/json" })
+			headers: new ngHttp.Headers({ "content-type": "application/json" })
 		})
 			.map((res: any) => {
 				return res.json()
