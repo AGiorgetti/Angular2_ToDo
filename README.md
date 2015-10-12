@@ -16,6 +16,8 @@ npm install
 
 tsd install
 
+tsd link (to link Angular2 bundled .d.ts)
+
 (change Visual Studio Code settings, see below)
 
 Compile
