@@ -1,6 +1,6 @@
 import * as ng from "angular2/angular2";
 import * as ngHttp from 'angular2/http';
-import { ITodoItem } from "./TodoItem";
+import * as TodoItem from "./TodoItem";
 
 /**
  * a Service used to manage the todo items
@@ -9,14 +9,14 @@ import { ITodoItem } from "./TodoItem";
 export class TodoListService implements ITodoListService { // <- ES6 class
 		
     // keeps the list of tasks 
-    todos: ITodoItem[] = [];
+    todos: TodoItem.ITodoItem[] = [];
 
     constructor(
         private $http: ngHttp.Http // injection 'happens'!
     ) {
         $http.get("/api/list").map((res: any) => {
             return res.json()
-        }).subscribe((todos: ITodoItem[]) => { // <- ES6 arrow syntax!
+        }).subscribe((todos: TodoItem.ITodoItem[]) => { // <- ES6 arrow syntax!
             // do not change the instance! can be dangerous depending on how we do the bindings
             for (let itm of todos) { // <- Es6 for..of
                 this.todos.push(itm);
@@ -32,7 +32,7 @@ export class TodoListService implements ITodoListService { // <- ES6 class
             headers: new ngHttp.Headers({ "content-type": "application/json" })
         }).map((res: any) => {
             return res.json()
-        }).subscribe((newTodoItem: ITodoItem) => {
+        }).subscribe((newTodoItem: TodoItem.ITodoItem) => {
             // update the local copy
             this.todos.push(newTodoItem);
         });
@@ -46,7 +46,7 @@ export class TodoListService implements ITodoListService { // <- ES6 class
             .map((res: any) => {
                 return res.json()
             })
-            .subscribe((deletedItem: ITodoItem) => {
+            .subscribe((deletedItem: TodoItem.ITodoItem) => {
                 // update the local list
                 for (let i = 0; i < this.todos.length; i++) {
                     if (this.todos[i].id === deletedItem.id) {
@@ -58,9 +58,11 @@ export class TodoListService implements ITodoListService { // <- ES6 class
     }
 }
 
+/**
+ * An interface to define the TodoList Service public api
+ */
 export interface ITodoListService {
-    todos: ITodoItem[];
+    todos: TodoItem.ITodoItem[];
     addTodo(task: string): void; // mybe return a promise
     removeTodo(id: number): void;
 }
-	
