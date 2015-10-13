@@ -12,6 +12,7 @@ export class TodoListService implements ITodoListService { // <- ES6 class
     todos: TodoItem.ITodoItem[] = [];
 
     constructor(
+        //@ng.Inject(ngHttp.Http) // no need to use the 'Inject' decorator if the types match
         private $http: ngHttp.Http // injection 'happens'!
     ) {
         $http.get("/api/list").map((res: any) => {
