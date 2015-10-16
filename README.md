@@ -16,7 +16,8 @@ npm install
 
 tsd install
 
-tsd link (to link Angular2 bundled .d.ts)
+[tsd link does not seem to work anymore, instead of using the bundled packages i jest add them the normal way 
+tsd link (to link Angular2 bundled .d.ts)]
 
 (change Visual Studio Code settings, see below)
 

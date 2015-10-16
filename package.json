@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "jquery": "^2.1.4",
-    "angular2": "^2.0.0-alpha.42",
+    "angular2": "^2.0.0-alpha.44",
     "systemjs": "^0.19.4",
     "bootstrap": "^3.3.5"
   }

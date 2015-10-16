@@ -32,7 +32,9 @@ var tsOptions = {
   module: "commonjs" //"AMD" // "commonjs" // values ["AMD", "commonjs", "UMD", "system"]
 };
 
-var tsFiles = ["typings/**/*.d.ts", "node_modules/angular2/bundles/typings/**/*.ts", paths.src + "**/*.ts", ];
+// no clue why 'tsd link' is not working anymore, i'll just add the .d.ts package the normal way instead of using the embedded ones
+// "node_modules/angular2/bundles/typings/**/*.ts"
+var tsFiles = ["typings/**/*.d.ts", paths.src + "**/*.ts", ];
 var source = gulp.src(tsFiles);
 
 gulp.task("tslint", function () {
